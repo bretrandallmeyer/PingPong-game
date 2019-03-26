@@ -40,8 +40,8 @@ public class Player extends GameObject{
 			y = 2;
 		}
 
-		if(y >= 470){
-			y = 470;
+		if(y >= 16620){
+			y = 16620;
 		}
 
 		for(int i = 0; i < handler.objects.size(); i++){
