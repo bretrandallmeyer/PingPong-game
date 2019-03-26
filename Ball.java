@@ -12,24 +12,19 @@ import javax.sound.sampled.Clip;
 import java.util.Scanner;
 import javax.swing.JLabel;
 
-public class Ball{
+public class Ball extends GameObject{
 	
 
-	public int x, y, width, height;
 	public int velx, vely;
 
 	public Ball(int x, int y, int width, int height){
+		super(x, y, width, height);
 
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
 	}
 
-	public void tick(){
+	public void tick(LinkedList<GameObject> object){
 
 		x+=velx;
-		y+=vely;
 
 		collision();
 	}
@@ -39,7 +34,7 @@ public class Ball{
 		Graphics2D gd = (Graphics2D)g;
 
 		g.setColor(Color.BLACK);
-		gd.fill(getBounds());
+		gd.fill(Bounds());
 
 
 	}
@@ -56,7 +51,11 @@ public class Ball{
 
 	}
 
-	public Ellipse2D getBounds(){
+	public Ellipse2D Bounds(){
 		return(new Ellipse2D.Double(x, y, width, height));
+	}
+
+	public Rectangle getBounds(){
+		return (new Rectangle(x, y, width, height));
 	}
 }

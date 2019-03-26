@@ -55,8 +55,10 @@ public class Game extends Canvas implements Runnable{
 
 		
 		sound.playBackGroundMusic();
-		ball = new Ball(300, 330, 25,25);
 		
+		ball = new Ball(300, 300, 25,25);
+		handler.add(ball);
+
 		player1 = new Player(1, ball.y, 25, 100, handler);
 		handler.add(player1);
 
@@ -159,9 +161,9 @@ public class Game extends Canvas implements Runnable{
 				g.fillRect(_WIDTH/2 , 1, 10, 10000);
 
 		
-	
+				handler.render(g);
 
-			ball.render(g);
+
 
 			g.setColor(Color.WHITE);
 
@@ -171,7 +173,6 @@ public class Game extends Canvas implements Runnable{
 		/////////////////////////////
 			g.setColor(Color.RED);
 
-			handler.render(g);
 
 
 
@@ -185,7 +186,6 @@ public class Game extends Canvas implements Runnable{
 	private void tick(){
 		
 		handler.tick();
-		ball.tick();
 		cam.tick(ball);
 
 	}

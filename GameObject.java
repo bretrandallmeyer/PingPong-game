@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.LinkedList;
+import java.awt.geom.Ellipse2D;
 
 public abstract class GameObject{
 	
@@ -44,6 +45,11 @@ public abstract class GameObject{
 	public Rectangle lowestBounds(){
 		return(new Rectangle(x, y+80, width, height/5));
 
+	}
+
+
+	public Ellipse2D Bounds(){
+		return(new Ellipse2D.Double(x, y, width, height));
 	}
 
 
