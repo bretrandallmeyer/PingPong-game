@@ -18,7 +18,7 @@ public class Game extends Canvas implements Runnable{
 	private static Frame frame;
 
 
-	protected final static String _TITLE = "Ping Pong";
+	protected final static String _TITLE = "Ping PONG";
 	protected final static int _WIDTH = 800;
 	protected final static int _HEIGHT = 600;
 	private boolean isRunning = false;
@@ -55,14 +55,14 @@ public class Game extends Canvas implements Runnable{
 
 		
 		sound.playBackGroundMusic();
-		
-		ball = new Ball(300, 300, 25,25);
+
+		ball = new Ball(300, 300, 25,25, Id.Ball, handler);
 		handler.add(ball);
 
-		player1 = new Player(1, ball.y, 25, 100, handler);
+		player1 = new Player(1, ball.y, 25, 100, Id.Player, handler);
 		handler.add(player1);
 
-		player2 = new Player(769, ball.y, 25, 100, handler);
+		player2 = new Player(769, ball.y, 25, 100, Id.Player, handler);
 		handler.add(player2);
 
 		try{

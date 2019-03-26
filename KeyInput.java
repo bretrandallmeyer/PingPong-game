@@ -20,41 +20,41 @@ public class KeyInput extends KeyAdapter{
 
 
 		if(code == KeyEvent.VK_RIGHT){
-			player.velx = 7;
+			player.velX = 7;
 
 
 		}else if(code == KeyEvent.VK_LEFT){
-			player.velx = -7;
+			player.velX = -7;
 		
 		}else if(code == KeyEvent.VK_UP){
-			player.vely = -7;
+			player.velY = -7;
 
 
 		}else if(code == KeyEvent.VK_DOWN){
-			player.vely = 7;
+			player.velY = 7;
 
 		}
 
 		if(code == KeyEvent.VK_D){
-			player2.velx = 7;
+			player2.velX = 7;
 
 
 		}else if(code == KeyEvent.VK_A){
-			player2.velx = -7;
+			player2.velX = -7;
 		
 		}else if(code == KeyEvent.VK_W){
-			player2.vely = -7;
+			player2.velY = -7;
 
 
 		}else if(code == KeyEvent.VK_S){
-			player2.vely = 7;
+			player2.velY = 7;
 
 		}
 
 		if(code == KeyEvent.VK_SPACE){
 
-			ball.velx = 5;
-			ball.vely = 5;
+			ball.velX = 5;
+			ball.velY = 5;
 		}
 	}
 
@@ -63,32 +63,32 @@ public class KeyInput extends KeyAdapter{
 		int code = e.getKeyCode();
 
 		if(code == KeyEvent.VK_RIGHT){
-			player.velx = 0;
+			player.velX = 0;
 
 		}else if(code == KeyEvent.VK_LEFT){
-			player.velx = 0;
+			player.velX = 0;
 		
 		}else if(code == KeyEvent.VK_UP){
-			player.vely = 0;
+			player.velY = 0;
 
 		}else if(code == KeyEvent.VK_DOWN){
-			player.vely = 0;
+			player.velY = 0;
 		
 		}
 
 		if(code == KeyEvent.VK_D){
-			player2.velx = 0;
+			player2.velX = 0;
 
 
 		}else if(code == KeyEvent.VK_A){
-			player2.velx = 0;
+			player2.velY = 0;
 		
 		}else if(code == KeyEvent.VK_W){
-			player2.vely = 0;
+			player2.velY = 0;
 
 
 		}else if(code == KeyEvent.VK_S){
-			player2.vely = 0;
+			player2.velY = 0;
 
 		}
 	}

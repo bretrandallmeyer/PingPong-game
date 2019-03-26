@@ -15,16 +15,19 @@ import javax.swing.JLabel;
 public class Ball extends GameObject{
 	
 
-	public int velx, vely;
+	private Handler handler;
 
-	public Ball(int x, int y, int width, int height){
-		super(x, y, width, height);
+	public Ball(int x, int y, int width, int height, Id id, Handler handler){
+		super(x, y, width, height, id);
+
+		this.handler = handler;
 
 	}
 
 	public void tick(LinkedList<GameObject> object){
 
-		x+=velx;
+		x+=velX;
+		y+=velY;
 
 		collision();
 	}
@@ -41,13 +44,17 @@ public class Ball extends GameObject{
 
 	public void collision(){
 
-		if(x >= 800 || x <= 0){
-			velx = -velx;
-		}
+		for(int i = 0; i < handler.objects.size(); i++){
 
-		if(y >=5000 || y <=0){
-			vely= -vely;
+			GameObject temp = handler.objects.get(i);
+
+			if(temp != this){
+				if(temp.getBounds().intersects(temp.getBounds())){
+
+				}
+			}
 		}
+		
 
 	}
 

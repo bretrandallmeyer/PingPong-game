@@ -15,29 +15,24 @@ import javax.swing.JLabel;
 public class Player extends GameObject{
 
 	public String name;
-	public int velx, vely;
 	public int score = 0;
 	private Handler handler;
 	private int loop;
 
 
-	public Player(int x, int y, int width, int height, Handler handler){
-		super(x, y, width, height);
+	public Player(int x, int y, int width, int height, Id id, Handler handler){
+		super(x, y, width, height, id);
 	
 		this.handler = handler;
 	}
 
 	public void tick(LinkedList<GameObject> object){
 		
-		y += vely;
+		y += velY;
 
-		if(loop == 10){
-			loop = 0;
 			collision();
-		}else{
-			loop++;
+	
 		}
-	}
 
 	public void collision(){
 
@@ -52,12 +47,13 @@ public class Player extends GameObject{
 		for(int i = 0; i < handler.objects.size(); i++){
 			
 			GameObject temp = handler.objects.get(i);
-			if(temp != this){
+			if(temp.getId() != Id.Player){
 
-				if(temp.getBounds().intersects(getBounds())){
+				if(getBounds().intersects(temp.x, temp.y, temp.width, temp.height)){
 				
-					temp.x = -temp.x;
-					System.out.println("load");
+					temp.velX = -temp.velX;
+					temp.velY = -temp.velY + 2;
+
 				}
 
 			}

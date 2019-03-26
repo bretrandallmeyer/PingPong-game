@@ -8,15 +8,17 @@ public abstract class GameObject{
 	protected int x, y;
 	protected int velX, velY;
 	protected int width, height;
+	protected Id id;
 
 
 
-	public GameObject(int x, int y, int width, int height){
+	public GameObject(int x, int y, int width, int height, Id id){
 
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
+		this.id = id;
 
 	}
 
@@ -101,6 +103,14 @@ public abstract class GameObject{
 
 	public void setHeight(int height){
 		this.height = height;
+	}
+
+	public Id getId(){
+		return this.id;
+	}
+
+	public void setId(Id id){
+		this.id = id;
 	}
 
 }
