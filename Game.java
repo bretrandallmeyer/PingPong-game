@@ -24,6 +24,8 @@ public class Game extends Canvas implements Runnable{
 	private boolean isRunning = false;
 	private Thread thread;
 	private Handler handler;
+	private SoundLoader sound;
+	private String soundPath = "Puzzle-Game.wav";
 
 
 	private Camera cam;
@@ -42,7 +44,8 @@ public class Game extends Canvas implements Runnable{
 	public Game(){
 
 		handler = new Handler();
-
+		sound = new SoundLoader();
+		sound.loadSound(soundPath);
 
 		init();
 	}
@@ -51,7 +54,7 @@ public class Game extends Canvas implements Runnable{
 
 
 		
-		
+		sound.playBackGroundMusic();
 		ball = new Ball(300, 330, 25,25);
 		
 		player1 = new Player(1, ball.y, 25, 100, handler);
@@ -185,13 +188,11 @@ public class Game extends Canvas implements Runnable{
 		ball.tick();
 		cam.tick(ball);
 
-		collision();
 	}
 
 	public void collision(){
 
-		player1.collision();
-		player2.collision();
+
 	}
 
 	public static void main(String args[]){
