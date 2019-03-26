@@ -47,12 +47,40 @@ public class Player extends GameObject{
 		for(int i = 0; i < handler.objects.size(); i++){
 			
 			GameObject temp = handler.objects.get(i);
-			if(temp.getId() != Id.Player){
+			if(temp.getId() == Id.Ball){
 
-				if(getBounds().intersects(temp.x, temp.y, temp.width, temp.height)){
+				if(getBounds().intersects(temp.x + temp.width, temp.y + temp.height , temp.width, temp.height)){
 				
 					temp.velX = -temp.velX;
-					temp.velY = -temp.velY + 2;
+					temp.velY = -temp.velY;
+
+				}
+
+				if(middleBounds().intersects(temp.x, temp.y, temp.width, temp.height)){
+				
+					temp.velX = -temp.velX;
+					temp.velY = -temp.velY;
+
+				}
+
+				if(bottomBounds().intersects(temp.x, temp.y, temp.width, temp.height)){
+				
+					temp.velX = -temp.velX;
+					temp.velY = -temp.velY;
+
+				}
+
+				if(underBounds().intersects(temp.x, temp.y, temp.width, temp.height)){
+				
+					temp.velX = -temp.velX;
+					temp.velY = -temp.velY;
+
+				}
+
+				if(lowestBounds().intersects(temp.x, temp.y, temp.width, temp.height)){
+				
+					temp.velX = -temp.velX;
+					temp.velY = -temp.velY;
 
 				}
 

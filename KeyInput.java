@@ -54,7 +54,7 @@ public class KeyInput extends KeyAdapter{
 		if(code == KeyEvent.VK_SPACE){
 
 			ball.velX = 5;
-			ball.velY = 5;
+			ball.velY = 1;
 		}
 	}
 

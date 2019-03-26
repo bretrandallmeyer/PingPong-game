@@ -56,7 +56,7 @@ public class Game extends Canvas implements Runnable{
 		
 		sound.playBackGroundMusic();
 
-		ball = new Ball(300, 300, 25,25, Id.Ball, handler);
+		ball = new Ball(400, 300, 25,25, Id.Ball, handler);
 		handler.add(ball);
 
 		player1 = new Player(1, ball.y, 25, 100, Id.Player, handler);

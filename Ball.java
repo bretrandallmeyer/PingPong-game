@@ -44,11 +44,29 @@ public class Ball extends GameObject{
 
 	public void collision(){
 
+		if(x < 2){
+
+			x = 400;
+			y = 300;
+
+			velX = 0;
+			velY = 0;
+		}
+
+		if(x > 800){
+
+			x = 400;
+			y = 300;
+
+			velX = 0;
+			velY = 0;
+		}
+
 		for(int i = 0; i < handler.objects.size(); i++){
 
 			GameObject temp = handler.objects.get(i);
 
-			if(temp != this){
+			if(temp.getId() == Id.Player){
 				if(temp.getBounds().intersects(temp.getBounds())){
 
 				}
